@@ -6,4 +6,4 @@ HOW TO RUN TESTS
 5. Install js: cd ./.jdks/graalvm-jdk-17/bin
 execute command 'gu install js'
 6. Verify js is installed: gu list
-7. In terminal execute command 'mvn test -Dtest=BookingRunner'
+7. In terminal execute command 'mvn clean test'
