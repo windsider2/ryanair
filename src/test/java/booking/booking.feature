@@ -19,7 +19,7 @@ Feature: Booking API tests
 
     Examples:
       | date           | destination | origin | userId     | status | expectedResponse
-      | #(currentDate) | NYC         | KRK    | 1          | 201    | {"date":'#regex ^\\d{4}-\\d{2}-\\d{2}$',"destination":'#regex ^[A-Z]{3}$',"id":'#number? _ > 0',"origin":'#regex ^[A-Z]{3}$',"userId":'#number? _ >0' }                                                                                   |
+      | #(currentDate) | NYC         | KRK    | 1          | 201    | {"date":'#regex ^\\d{4}-\\d{2}-\\d{2}$',"destination":'#regex ^[A-Z]{3}$',"id":'#number? _ > 0',"origin":'#regex ^[A-Z]{3}$',"userId":'#number? _ >0'}                                                                                   |
       | #(currentDate) | NYC         | KRK    | 1          | 201    | {"date":#(currentDate),"destination":"NYC","id":'#number? _ > 0',"origin":"KRK","userId":1 }                                                                                                                                              |
       | #(futureDate)  | CHI         | ATL    | 1          | 201    | {"date":#(futureDate),"destination":"CHI","id":'#number? _ > 0',"origin":"ATL","userId":1}                                                                                                                                                |
       # In the given scenario, it appears that the application allows the setting of a late date,
