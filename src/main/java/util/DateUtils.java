@@ -10,7 +10,7 @@ public class DateUtils {
     }
 
     public static String getFutureDate(long numberOfMonths) {
-        return LocalDate.now().plusMonths(numberOfMonths).format( getFormatter());
+        return LocalDate.now().plusMonths(numberOfMonths).format(getFormatter());
     }
 
     public static String getPastDate(long numberOfMonths) {
