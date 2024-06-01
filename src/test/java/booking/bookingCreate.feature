@@ -15,7 +15,6 @@ Feature: Booking API tests
     Then status <status>
     And assert responseTime  < 1000
     And match response == <expectedResponse>
-    * karate.forEach(responseHeaders, function(key, value){ karate.log(key + ':', value) })
 
     Examples:
       | date           | destination | origin | userId     | status | expectedResponse
