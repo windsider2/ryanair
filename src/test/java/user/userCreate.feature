@@ -7,16 +7,16 @@ Feature: User Management
     * def firstName = TestData.getRandomFirstName()
     * def lastName = TestData.getRandomLastName()
 
+  @createUser
   Scenario: Create a user with a new email address
     Given path '/user'
     And request {email: #(email), name: #(firstName), surname: #(lastName)}
-    * print 'The created user email1 is:', email
     When method post
     Then status 201
     And match response ==
     """
 {
-  id: '#number',
+  id: '#number? _ > 0',
   email: #(email),
   name: #(firstName),
   surname: #(lastName)
@@ -27,7 +27,6 @@ Feature: User Management
     * def expectedMessage = 'User with email \'' + email + '\' already exists'
     Given path '/user'
     And request { email: #(email), name: #(firstName), surname: #(lastName) }
-    * print 'The created user email2 is:', email
     When method post
     Then status 409
     And match response == { errors: null, message: '#(expectedMessage)' }
