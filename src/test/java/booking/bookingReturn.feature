@@ -5,7 +5,7 @@ Feature: Booking API tests
     * def DateUtil = Java.type('util.DateUtils')
     * def currentDate = DateUtil.getCurrentDate()
     * def userId = 1
-    * def notExistingUserId = 2147483647
+    * def notExistingUserId = 9999999999
 
   Scenario: Create and retrieve bookings for defined user ID and date
     Given path 'booking'
@@ -27,6 +27,7 @@ Feature: Booking API tests
     """
 
   Scenario: Try to retrieve bookings for not existing user
+    * def errorMessage = 'No user with id ' + notExistingUserId
     Given path 'booking'
     And param user = notExistingUserId
     And param date = currentDate
@@ -34,5 +35,8 @@ Feature: Booking API tests
     Then status 404
     And match response ==
     """
-    {"errors":null,"message":"No user with id 2147483647"}
+    {
+      "errors": null,
+      "message": '#(errorMessage)'
+    }
     """

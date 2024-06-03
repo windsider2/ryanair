@@ -39,6 +39,6 @@ Feature: Booking API tests
       | #(currentDate) | NYC         | null   | #(userId)  | 400    | {"errors":[{"location":{"in":"request","name":"body","docPath":"/paths/~1booking/post/requestBody/content/application~1json/schema","path":"/origin"},"message":"must match pattern \"^[A-Z]{3}$\""}],"message":"Validation errors"}      |
       | #(currentDate) | NYC         | KRK    | null       | 400    | {"errors":[{"location":{"in":"request","name":"body","docPath":"/paths/~1booking/post/requestBody/content/application~1json/schema","path":"/userId"},"message":"must be number"}],"message":"Validation errors"}                         |
       | #(currentDate) | NYC         | KRK    | 0          | 400    | {"errors":[{"location":{"in":"request","name":"body","docPath":"/paths/~1booking/post/requestBody/content/application~1json/schema","path":"/userId"},"message":"must be >= 1"}],"message":"Validation errors"}                           |
-      | #(currentDate) | NYC         | KRK    | 2147483647 | 404    | {"errors":null,"message":"No user with id 2147483647"}                                                                                                                                                                                    |
+      | #(currentDate) | NYC         | KRK    | 9999999999 | 404    | {"errors":null,"message":"No user with id 9999999999"}                                                                                                                                                                                    |
 
 

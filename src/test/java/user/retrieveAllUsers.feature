@@ -7,6 +7,8 @@ Feature: Get All Users
     Given path '/user'
     When method get
     Then status 200
+    #The response body verification fails because a user with an empty email was created.
+      # Please refer to the comments in the userCreate feature file for more details.
     And match each response ==
     """
    {
