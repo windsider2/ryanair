@@ -1,7 +1,7 @@
 Feature: Booking API Headers tests
 
   Background:
-    * url 'http://127.0.0.1:8900'
+    * url baseUrl
     * def DateUtil = Java.type('util.DateUtils')
     * def currentDate = DateUtil.getCurrentDate()
     * def currentDateTime = DateUtil.getCurrentDateTime()

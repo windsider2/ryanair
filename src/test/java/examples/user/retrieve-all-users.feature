@@ -1,7 +1,7 @@
 Feature: Get All Users
 
   Background:
-    * url 'http://127.0.0.1:8900'
+    * url baseUrl
 
   Scenario: Retrieve list of users
     Given path '/user'

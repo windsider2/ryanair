@@ -1,13 +1,13 @@
 Feature: Booking API tests
 
   Background:
-    * url 'http://127.0.0.1:8900'
+    * url baseUrl
     * def DateUtil = Java.type('util.DateUtils')
     * def currentDate = DateUtil.getCurrentDate()
     * def notExistingUserId = 9999999999
 
   Scenario: Create and retrieve bookings for defined user ID and date
-    Given def createdBooking = karate.callSingle('classpath:booking/createBooking.feature@createBooking')
+    Given def createdBooking = karate.callSingle('classpath:examples/booking/create-booking.feature@createBooking')
     And def userId = createdBooking.userId
     When path 'booking'
     And param user = userId

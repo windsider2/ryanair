@@ -1,8 +1,8 @@
 Feature: Retrieve booking by booking id
 
   Background:
-    * url 'http://127.0.0.1:8900'
-    * def createdBooking = karate.callSingle('classpath:booking/createBooking.feature@createBooking')
+    * url baseUrl
+    * def createdBooking = karate.callSingle('classpath:examples/booking/create-booking.feature@createBooking')
     * def id = createdBooking.response.id
     * def userId = createdBooking.userId
     * def date = createdBooking.currentDate

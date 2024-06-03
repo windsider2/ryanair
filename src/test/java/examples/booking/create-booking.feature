@@ -1,12 +1,12 @@
 Feature: Booking API tests
 
   Background:
-    * url 'http://127.0.0.1:8900'
+    * url baseUrl
     * def DateUtil = Java.type('util.DateUtils')
     * def currentDate = DateUtil.getCurrentDate()
     * def pastDate = DateUtil.getPastDate(12)
     * def futureDate = DateUtil.getFutureDate(3)
-    * def userResponse = karate.callSingle('classpath:user/createUser.feature@createUser')
+    * def userResponse = karate.callSingle('classpath:examples/user/create-user.feature@createUser')
     * def userId = userResponse.response.id
 
   @createBooking

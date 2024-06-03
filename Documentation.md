@@ -9,7 +9,13 @@ execute command 'gu install js'
 7. Install Docker
 8. Import app image to Docker like this: docker load -i api_testing_service_latest.tar.xz
 9. Start demo app like this: docker run -d -p 8900:8900 --name apiservice api_testing_service
-10. In terminal execute command 'mvn clean test'
+10. In terminal execute command 'mvn clean test verify'
+
+How to Generate and View Reports
+
+1. After running tests navigate to target/cucumber-html-reports directory
+2. Find the overview-features.html file within this directory. Right-click on this file.
+3. Select Open In -> Browser -> Chrome (or any other browser of your choice) to view the report.
 
 Notes on Test Fails
 1. createUserAndCreateBooking feature file:
@@ -21,4 +27,23 @@ Notes on Test Fails
    Creating users with invalid emails causes the test to fail in the 'Retrieve list of users' scenario in the retrieveAllUsers feature file.
 3. retrieveAllUsers feature file:
    The response body verification fails due to the creation of a user with an empty email, as mentioned previously.
+
+Test Framework
+The test framework is built on the Karate framework and utilizes the Java technology stack.
+
+Key components of the test framework include:
+Karate Framework: Chosen because it is already in use by the team, allowing to write tests in BDD style, leverage
+existing expertise and maintain technology consistency across projects.
+Maven: Employed as the build tool to manage dependencies and streamline the build process.
+JUnit 5: Used as the unit test framework to facilitate the execution of test cases.
+GraalVM JDK 17: Utilized as the Java Development Kit. GraalVM is necessary because Karate uses JavaScript for scripting
+within feature files (e.g., karate-config.js, custom functions). GraalVM includes a highly optimized JavaScript engine,
+Graal.js, which enhances performance and compatibility for these scripts.
+Cucumber Reporting: Integrated to generate and expose common reports.
+
+Test Design and Creation
+Test creation is guided by the Swagger API documentation. For each API resource, a set of positive scenarios, covering
+creating and retrieving users and bookings, was developed. Additionally, negative scenarios were incorporated to address
+potential error conditions and edge cases.
+
   

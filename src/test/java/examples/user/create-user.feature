@@ -1,7 +1,7 @@
 Feature: Create user
 
   Background:
-    * url 'http://127.0.0.1:8900'
+    * url baseUrl
     * def TestData = Java.type('util.TestData')
     * def email = callonce read('classpath:util/generate-email.js')
     * def emailUpdated = read('classpath:util/generate-email.js')
@@ -39,9 +39,9 @@ Feature: Create user
       | #(email)        | John      | Doe      | 409    | { errors: null, message: '#(expectedMessage)' }                                                                                                                                                               |
       # The service accepts an invalid email such as 'fdij78gmailcom' and
             # returns a status code 201 along with the invalid email.
-      | #(invalidEmail) | John      | Doe      | 400    | {"errors":[{"location":{"in":"request","name":"body","docPath":"/paths/~1user/post/requestBody/content/application~1json/schema","path":"/email"},"message":"must be string"}],"message":"Validation errors"} |
+      | #(invalidEmail) | Jain      | Doever   | 400    | {"errors":[{"location":{"in":"request","name":"body","docPath":"/paths/~1user/post/requestBody/content/application~1json/schema","path":"/email"},"message":"must be string"}],"message":"Validation errors"} |
       # The service accepts a null email and
             # returns a status code of either 201 or 409 (with the message: 'User with email 'null' already exists').
-      | null            | John      | Doe      | 400    | { "errors": ["Email address is required"] }                                                                                                                                                                   |
-      | #(emailUpdated) | null      | Doe      | 400    | {"errors":[{"location":{"in":"request","name":"body","docPath":"/paths/~1user/post/requestBody/content/application~1json/schema","path":"/email"},"message":"must be string"}],"message":"Validation errors"} |
-      | #(emailUpdated) | John      | null     | 400    | {"errors":[{"location":{"in":"request","name":"body","docPath":"/paths/~1user/post/requestBody/content/application~1json/schema","path":"/email"},"message":"must be string"}],"message":"Validation errors"} |
+      | null            | David     | Bayer    | 400    | { "errors": ["Email address is required"] }                                                                                                                                                                   |
+      | #(emailUpdated) | null      | Douglas  | 400    | {"errors":[{"location":{"in":"request","name":"body","docPath":"/paths/~1user/post/requestBody/content/application~1json/schema","path":"/email"},"message":"must be string"}],"message":"Validation errors"} |
+      | #(emailUpdated) | Betty     | null     | 400    | {"errors":[{"location":{"in":"request","name":"body","docPath":"/paths/~1user/post/requestBody/content/application~1json/schema","path":"/email"},"message":"must be string"}],"message":"Validation errors"} |

@@ -36,6 +36,12 @@
             <artifactId>javafaker</artifactId>
             <version>1.0.2</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting -->
+        <dependency>
+            <groupId>net.masterthought</groupId>
+            <artifactId>cucumber-reporting</artifactId>
+            <version>5.6.0</version>
+        </dependency>
     </dependencies>
     <build>
         <testResources>
