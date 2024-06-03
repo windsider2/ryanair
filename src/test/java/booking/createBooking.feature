@@ -6,7 +6,7 @@ Feature: Booking API tests
     * def currentDate = DateUtil.getCurrentDate()
     * def pastDate = DateUtil.getPastDate(12)
     * def futureDate = DateUtil.getFutureDate(3)
-    * def userResponse = karate.callSingle('classpath:user/userCreate.feature@createUser')
+    * def userResponse = karate.callSingle('classpath:user/createUser.feature@createUser')
     * def userId = userResponse.response.id
 
   @createBooking

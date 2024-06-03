@@ -1,4 +1,4 @@
-Feature: User Management
+Feature: Create user
 
   Background:
     * url 'http://127.0.0.1:8900'

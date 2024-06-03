@@ -3,10 +3,10 @@ package user;
 
 import com.intuit.karate.junit5.Karate;
 
-public class UserCreateTest {
+public class CreateUserTest {
 
     @Karate.Test
     Karate userCreateTest() {
-        return Karate.run("userCreate").relativeTo(getClass());
+        return Karate.run("createUser").relativeTo(getClass());
     }
     }

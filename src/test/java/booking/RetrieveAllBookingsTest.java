@@ -3,9 +3,9 @@ package booking;
 
 import com.intuit.karate.junit5.Karate;
 
-public class BookingReturnTest {
+public class RetrieveAllBookingsTest {
     @Karate.Test
     Karate bookingReturnTest() {
-        return Karate.run("bookingReturn").relativeTo(getClass());
+        return Karate.run("retrieveAllBookings").relativeTo(getClass());
     }
 }
