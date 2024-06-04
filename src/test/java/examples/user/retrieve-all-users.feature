@@ -8,7 +8,7 @@ Feature: Get All Users
     When method get
     Then status 200
     #The response body verification fails because a user with an empty email was created.
-      # Please refer to the comments in the userCreate feature file for more details.
+      # Please refer to the comments in the create-user feature file for more details.
     And match each response ==
     """
    {
