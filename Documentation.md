@@ -48,6 +48,7 @@ Graal.js, which enhances performance and compatibility for these scripts.
 Cucumber Reporting: Integrated to generate and expose common reports.
 
 Test Design and Creation
+
 Test creation is guided by the Swagger API documentation. For each API resource, a set of positive scenarios, covering
 creating and retrieving users and bookings, was developed. Additionally, negative scenarios were incorporated to address
 potential error conditions and edge cases. For more details, please refer to the feature files, which serve as
