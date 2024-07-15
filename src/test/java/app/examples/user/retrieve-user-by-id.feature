@@ -1,8 +1,8 @@
 Feature: Get User By ID
 
   Background:
-    * url baseUrl
-    * def createdUser = karate.callSingle('classpath:examples/user/create-user.feature@createUser')
+    * url 'localhost:8900'
+    * def createdUser = karate.callSingle('classpath:app/examples/user/create-user.feature@createUser')
     * def userId = createdUser.response.id
 
   Scenario Outline: Retrieve a user by id

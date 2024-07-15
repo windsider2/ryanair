@@ -1,4 +1,4 @@
-package examples;
+package app.examples;
 
 import com.intuit.karate.Results;
 import com.intuit.karate.Runner;
@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class ExamplesTest {
     @Test
     void testParallel() {
-        Results results = Runner.path("classpath:examples")
+        Results results = Runner.path("classpath:app/examples")
                 .outputCucumberJson(true)
                 .parallel(2);
         generateReport(results.getReportDir());

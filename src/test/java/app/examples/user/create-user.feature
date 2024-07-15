@@ -3,11 +3,11 @@ Feature: Create user
   Background:
     * url baseUrl
     * def TestData = Java.type('util.TestData')
-    * def email = callonce read('classpath:util/generate-email.js')
-    * def emailUpdated = read('classpath:util/generate-email.js')
+    * def email = callonce read('classpath:app/util/generate-email.js')
+    * def emailUpdated = read('classpath:app/util/generate-email.js')
     * def firstName = TestData.getRandomFirstName()
     * def lastName = TestData.getRandomLastName()
-    * def removeCharacters = read('classpath:util/remove-characters.js')
+    * def removeCharacters = read('classpath:app/util/remove-characters.js')
     * def invalidEmail = removeCharacters(email, '@.')
 
   @createUser
